@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs Page</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f9;
+            color: #333;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1, h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #444;
+        }
+
+        .cards-section {
+            margin-bottom: 40px;
+        }
+
+        .card-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            overflow: hidden;
+            width: 300px;
+            text-align: center;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        iframe {
+            width: 100%;
+            height: 180px;
+            border: none;
+        }
+
+        .card h3 {
+            margin: 15px 0;
+            color: #555;
+        }
+
+        .card p {
+            padding: 0 15px 15px;
+            font-size: 0.9em;
+        }
+
+        .card a {
+            color: #007BFF;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .card a:hover {
+            color: #0056b3;
+        }
+
+        .blog-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-bottom: 1px solid #eee;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .profile-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        @media (max-width: 768px) {
+            .card-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Blogs Page</h1>
+
+        <section class="cards-section">
+            <h2>YouTube Videos</h2>
+            <div class="card-container">
+                <div class="card youtube-card">
+                    <iframe src="https://www.youtube.com/watch?v=c2s_d_oR4mU" allowfullscreen></iframe>
+                    <div class="content">
+                        <h3>Video Title 1</h3>
+                        <p>This is a description for Video 1. Watch to explore amazing content.</p>
+                    </div>
+                </div>
+                <div class="card youtube-card">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                    <div class="content">
+                        <h3>Video Title 2</h3>
+                        <p>This is a description for Video 2. Dive into the details here.</p>
+                    </div>
+                </div>
+                <div class="card youtube-card">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                    <div class="content">
+                        <h3>Video Title 3</h3>
+                        <p>Explore this Video 3 for more insights and knowledge.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cards-section">
+            <h2>Blogs</h2>
+            <div class="card-container">
+                <div class="card blog-card">
+                    <img src="img/blog-1.jpg" alt="Blog Image">
+                    <div class="content">
+                        <h3>Blog Title 1</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a href="#">Read more...</a></p>
+                        <div class="profile">
+                            <img src="img/team-1.jpg" alt="Profile Image" class="profile-img">
+                            <span>John Doe</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card blog-card">
+                    <img src="img/blog-2.jpg" alt="Blog Image">
+                    <div class="content">
+                        <h3>Blog Title 2</h3>
+                        <p>Nullam convallis orci at felis tincidunt. <a href="#">Read more...</a></p>
+                        <div class="profile">
+                            <img src="img/team-2.jpg" alt="Profile Image" class="profile-img">
+                            <span>Jane Smith</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card blog-card">
+                    <img src="img/blog-3.jpg" alt="Blog Image">
+                    <div class="content">
+                        <h3>Blog Title 3</h3>
+                        <p>Suspendisse nec arcu venenatis. <a href="#">Read more...</a></p>
+                        <div class="profile">
+                            <img src="img/team-3.jpg" alt="Profile Image" class="profile-img">
+                            <span>Emily Brown</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

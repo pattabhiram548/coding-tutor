@@ -1,0 +1,205 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Vision and Mission Section */
+.vision-mission {
+    padding: 80px 0;
+    margin-top: 50px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Header Styling */
+.vision-section, .mission-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 70px;
+    flex-wrap: wrap; /* Allow content to wrap on smaller screens */
+}
+
+/* Vision and Mission Text Styling */
+.vision-text, .mission-text {
+    width: 48%; /* Adjust the width to create space between text and images */
+    padding: 20px;
+    text-align: left;
+    opacity: 0; /* Initially hidden */
+    animation: fadeInUp 1.5s forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.vision-text h2, .mission-text h2 {
+    font-size: 3.2em;  /* Increased font size for desktop */
+    font-weight: 700;
+    color: #B91D2E;
+    margin-bottom: 25px;
+    text-transform: capitalize;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.vision-text p, .mission-text p {
+    font-size: 1.em;  /* Increased font size for desktop */
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+    text-align: justify;
+}
+
+/* Hover Effects for Text */
+.vision-text:hover h2, .mission-text:hover h2 {
+    color: #D94C3E;
+    transform: scale(1.05);
+}
+
+.vision-text:hover p, .mission-text:hover p {
+    color: #444;
+}
+
+/* Image Styling */
+.vision-img, .mission-img {
+    width: 48%;
+    padding: 15px;
+    opacity: 0;
+    animation: fadeInImage 1.5s forwards;
+}
+
+@keyframes fadeInImage {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.vision-img img, .mission-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect for Images */
+.vision-img img:hover, .mission-img img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Styling */
+@media (max-width: 1024px) {
+    .vision-section, .mission-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .vision-text, .mission-text {
+        width: 85%;
+        text-align: center;
+        opacity: 1; /* Ensure text is visible on tablets */
+        animation: none; /* Remove animation on tablets */
+    }
+
+    .vision-text h2, .mission-text h2 {
+        font-size: 2.2em;
+        margin-bottom: 15px;
+    }
+
+    .vision-text p, .mission-text p {
+        font-size: 1.05em;
+        margin-bottom: 15px;
+    }
+
+    .vision-img, .mission-img {
+        width: 85%;
+        margin-bottom: 20px;
+        opacity: 1;
+        animation: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .vision-text, .mission-text {
+        width: 90%;
+        padding: 20px;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .vision-text h2, .mission-text h2 {
+        font-size: 2em;
+        margin-bottom: 15px;
+    }
+
+    .vision-text p, .mission-text p {
+        font-size: 1em;
+        line-height: 1.6;
+    }
+
+    .vision-img, .mission-img {
+        width: 90%;
+        margin-bottom: 20px;
+        opacity: 1;
+        animation: none;
+    }
+
+    /* Ensure Mission Image comes after the Mission Text on mobile view */
+    .mission-img {
+        order: 2; /* This places the mission image after the text */
+    }
+
+    .mission-section {
+        order: 1; /* Mission section appears second */
+    }
+}
+
+@media (max-width: 480px) {
+    .vision-text h2, .mission-text h2 {
+        font-size: 1.7em;
+    }
+
+    .vision-text p, .mission-text p {
+        font-size: 0.95em;
+    }
+
+    .vision-text, .mission-text {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .vision-img, .mission-img {
+        width: 100%;
+    }
+}

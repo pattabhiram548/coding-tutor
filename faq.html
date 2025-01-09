@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>CodingTutor</title>
+    <link rel="icon" href="img/logo-aja-transformed (1).png">
+
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@200;300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Font -->
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+    <!-- Remix Icon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/ourteam.css" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #FF4B4B;
+            --color-text: #545d7a;
+            --color-white: #fff;
+            --color-title: #242e4c;
+            --color-background: #f7f8fb;
+            --color-border: #dae1f5;
+
+            /* Fonts */
+            --font-family: "Satoshi", sans-serif;
+            --fs-sm: 1.4rem;
+            --fs-md: 1.6rem;
+            --fs-lg: 2.2rem;
+            --fw-regular: 400;
+            --fw-medium: 500;
+            --fw-bold: 700;
+
+            /* Transition & Box Shadow */
+            --transition: 0.4s ease-in-out;
+            --shadow: 0px 60px 56px -12px rgba(9, 40, 163, 0.05);
+
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* box-sizing: content-box; */
+        }
+
+        body {
+            background-color: var(--color-background);
+            font-family: var(--font-family);
+            color: var(--color-text);
+            font-size: var(--fs-md);
+            font-weight: var(--fw-regular);
+        }
+
+        .containers {
+            width: 100%;
+            margin: auto;
+            min-height: 100vh;
+            padding: 2rem;
+            display: grid;
+            place-items: center;
+        }
+
+        .accordion__wrapper {
+            background-color: var(--color-white);
+            box-shadow: var(--shadow);
+            border-radius: 2.5rem;
+            width: 100%;
+            max-width: 120rem;
+            padding: 5rem;
+        }
+
+        .accordion__title {
+            font-size: var(--fs-lg);
+            font-weight: var(--fw-bold);
+            color: var(--color-title);
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .accordion {
+            border-bottom: 0.1rem solid var(--color-border);
+            padding-bottom: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .accordion__header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+        }
+
+        .accordion__icon {
+            background-color: var(--color-primary);
+            width: 2.2rem;
+            height: 2.2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            color: var(--color-white);
+            flex-shrink: 0;
+        }
+
+        .accordion__question {
+            font-size: var(--fs-md);
+            font-weight: var(--fw-medium);
+            color: var(--color-title);
+        }
+
+        .accordion__answer {
+            padding: 2rem 0;
+        }
+
+        .accordion__content {
+            overflow: hidden;
+            height: 0;
+            transition: var(--transition);
+        }
+
+        @media screen and (min-width: 580px) {
+            .accordion__wrapper {
+                padding: 5rem 8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-secondary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-primary px-5 d-none d-lg-block">
+        <div class="row gx-0 align-items-center">
+            <div class="col-lg-5 text-center text-lg-start mb-lg-0">
+                <div class="d-flex">
+                    <a href="#" class="text-muted me-4"><i
+                            class="fas fa-envelope text-secondary me-2"></i>hr@ajacs.in</a>
+                    <a href="#" class="text-muted me-0"><i class="fas fa-phone-alt text-secondary me-2"></i>+9697 9697
+                        88</a>
+                </div>
+            </div>
+            <div class="col-lg-3 row-cols-1 text-center mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <a class="btn btn-sm btn-outline-light btn-square rounded-circle me-2" href="https://x.com/ajacsllp?mx=2"><i class="fab fa-twitter fw-normal text-secondary"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-square rounded-circle me-2" href="https://www.facebook.com/people/Aja-Consulting-Services-LLP/61557243235662/"><i class="fab fa-facebook-f fw-normal text-secondary"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-square rounded-circle me-2" href="https://www.linkedin.com/company/ajaconsultingservicesllp?originalSubdomain=in"><i class="fab fa-linkedin-in fw-normal text-secondary"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-square rounded-circle me-2" href="https://www.instagram.com/ajacodingtutorllp/"><i class="fab fa-instagram fw-normal text-secondary"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-square rounded-circle" href="https://www.youtube.com/@ajacodingtutorllp"><i class="fab fa-youtube fw-normal text-secondary"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <a href="#" class="text-muted me-2"> Help</a><small> / </small>
+                    <a href="#" class="text-muted mx-2"> Support</a><small> / </small>
+                    <a href="#" class="text-muted ms-2"> Contact</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid nav-bar p-0">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white px-4 px-lg-5 py-3 py-lg-0">
+            <a href="" class="navbar-brand p-0">
+                <h1 class="display-5 text-secondary m-0"><img src="img/codingtour log.avif" class="img-fluid" alt="">
+                </h1>
+                <!-- <img src="img/logo.png" alt="Logo"> -->
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="navbar-nav ms-auto py-0">
+                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="about.html" class="nav-item nav-link">About CT</a>
+                <div class="nav-item dropdown">
+                    <a href="Courses/etrain-master/cource.html" class="nav-link dropdown-toggle" role="button"
+                        aria-expanded="false">
+                        Program
+                    </a>
+
+                </div>
+                <a href="service.html" class="nav-item nav-link">Coding Tutors</a>
+                <a href="" class="nav-item nav-link">CT-Mini</a>
+                <a href="faq.html" class="nav-item nav-link active">FAQ</a>
+            </div>
+            <a href="../Coding Tutor/Coding Tutors/contact.html"
+                class="btn btn-primary border-secondary rounded-pill py-2 px-4 px-lg-3 mb-3 mb-md-3 mb-lg-0">Orientation</a>
+
+        </nav>
+    </div>
+    <!-- Navbar & Hero End -->
+
+
+    <div class="containers">
+        <div class="accordion__wrapper">
+            <h1 class="accordion__title">Frequently Asked Questions</h1>
+
+            <!-- Accordion 1  -->
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">What is Coding Tutor™?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">Coding Tutor™ is a program by AJA designed to help individuals gain
+                        practical coding skills and become industry ready.</p>
+                </div>
+            </div>
+
+            <!-- Accordion 2  -->
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">Why are skills more important than knowledge in IT?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">Skills involve practical abilities to perform tasks, while knowledge is
+                        just information. IT companies seek skilled individuals who can apply their knowledge
+                        effectively.</p>
+                </div>
+            </div>
+
+            <!-- Accordion 3 -->
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">Who can join the Coding Tutor™ program?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">Any graduate with logical thinking, basic communication skills, and
+                        classroom training in Full Stack Development in Java, Dot Net, Python, or DevOps can join.</p>
+                </div>
+            </div>
+
+            <!-- Accordion 4 -->
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">What will I learn in Coding Tutor™?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">You will learn coding skills through exercises, assignments, and
+                        projects. Additionally, you'll receive training in communication and corporate skills.</p>
+                </div>
+            </div>
+
+            <!-- Accordion 5 -->
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">How long is the Coding Tutor™ program?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">The program lasts for 6 months, with 1200 hours of skills improvement
+                        overall, which includes 1000 hours of coding practice.</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">Is the Coding Tutor™ program online or in-person?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">The program is in-person and requires you to attend the office
+                        regularly.</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">What technologies are covered in Coding Tutor™?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">Currently, the program covers Java/J2EE Full Stack Development, Dot Net
+                        Full Stack Development, Python Full Stack Development, and DevOps Engineering.</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">How many days a week do I need to attend?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">The program runs 6 days a week. (Monday to Saturday)</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">Are there any prerequisites for joining the Coding Tutor™ program?
+                    </h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">Yes, you need to have completed basic training in the respective
+                        technology.</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">Is work from home available in the Coding Tutor™ program?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">No, the program requires you to be present in the office for focused
+                        learning.</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">What is the cost of the Coding Tutor™ program?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">The investment for the program is 3.69 L inclusive of taxes.</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">Is there a stipend during the internship?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">Yes, a monthly stipend of 10,000 INR will be paid during the 6-month
+                        internship.</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">Do I need to bring my own laptop?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">Yes, AJA follows a Bring Your Own Device (BYOD) policy for the internship.</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">What do I get after completing the internship?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">You will receive an Internship Certificate, Relieving and Experience Certificate, 6 months of stipend payslips, Form 16, and unlock the job offer as a Full Stack Developer at AJA.</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">Is there a job guarantee after the internship?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">Yes, AJA offers a job offer as a Full Stack Developer with a starting CTC of 3.6 Lacs per annum on day 1 of your internship, and this gets unlocked on completion of the 6 months internship.</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">What will be my designation during the program?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">During the internship, your designation will be Trainee Software Engineer. Upon successful completion of the program, you will be promoted to Software Engineer.</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">Is relocation mandatory?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">Depending on the project, relocation may be applicable. You may need to relocate as per project requirements.</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">Are there employee benefits during the internship?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">Employee benefits like Group Medical Insurance, ESI, and PF are applicable once you join AJA as a full-time employee after the internship.</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">Where is the work location?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">You will initially be based in Hyderabad but may be deployed to other locations across India.</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">Is there any bond with AJA?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">No, there is no bond. However, a 3-month notice period is required if you are working on a customer project.</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">How are Coding Tutors selected?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">Coding Tutors are selected through a stringent process, including verifying their experience and evaluating their coding skills through a demo.</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">Are Coding Tutors paid?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">Yes, Coding Tutors are paid between $10 to $25 per hour based on their experience and skills.</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">How can I join the Coding Tutor™ platform?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">You need to join AJA’s 6-month internship program to learn under the Coding Tutor™ platform. (Click Here button)[insert registration form here]</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">What if I have no basic knowledge in coding?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">If you have no basic knowledge, upon careful consideration, you may be mapped to a 9-month cohort. The management's decision on this is final.</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">How many Coding Tutors are currently empaneled with AJA?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">Currently, 50+ Coding Tutors are empaneled, with plans to increase to 200+ soon.</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">What additional skills will I learn apart from coding?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">You will also learn communication skills and corporate skills necessary for the IT industry.</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">Why is this program considered an investment?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">The program is considered an investment because it aims to provide long-term career growth and skills that generate future opportunities.</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">What are the stages of coding tutoring in the program?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">The 1000 hours are divided into three stages: Basic/Fundamental Skills (350 hours), Intermediate Skills (500 hours), and Advanced Skills (150 hours).</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">What types of projects will I work on during the program?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">You will work on real-world exercises, assignments, Proof of Concepts (PoCs), and a comprehensive project in your technology stream.</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">How does AJA ensure the quality of coding tutors?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">AJA has a stringent selection process, including verifying work experience, documentation checks, and technical evaluations by a tech panel.</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">What kind of communication skills will be taught?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">You will receive 120 hours of training in conversational grammar, interpersonal skills, email etiquette, public speaking, group discussions, and many other important skills.</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">What are corporate skills, and why are they important?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">Corporate skills include payroll and benefits, income tax benefits, HR policies, and finance basics, which are crucial for navigating and succeeding in a corporate environment.</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">Can I join the program if I have only basic communication skills?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">Yes, basic communication skills and spoken English are prerequisites, and further communication skills will be developed during the program.</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">What is the role of industry experts in the Coding Tutor™ program?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">Industry experts, with 3-15 years of experience, provide hands-on coding guidance, share best practices, and help solve real-world problems.</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">What happens if I need to leave the program early?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">The internship is for 6 months, and you can avail all the benefits of the program only if you complete the internship. While there is no bond after the internship, if you are working on a project with a client or internal project, a 3-month notice period is mandatory.</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">How does AJA support continuous learning post-internship?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">Post-internship, employees are provided with opportunities to work on diverse projects and further their skills through ongoing training and development.</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">What does AJA’s BYOD policy entail?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">Bring Your Own Device (BYOD) policy means interns must bring their own laptops as per AJA’s guidelines. Post-internship, devices may be provided based on project needs.</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">How does AJA handle statutory deductions from the stipend?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">Statutory deductions like Professional Tax are applied to the stipend, ensuring compliance with local regulations.</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">What are the job prospects after completing the program?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">Successful interns unlock the job offer (received on Day 1 of internship) from AJA as Full Stack Developers, with a clear path for salary growth and career advancement.</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">How can I apply for the Coding Tutor™ program?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">You can apply for the program by joining AJA’s internship program through our official application process. (insert registration link here) followed by the interview process (written test/f2f interview).</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">Will I have access to AJA's leadership team during the internship?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">Yes, interns will have access to AJA’s leadership, providing mentorship and insights into the industry.</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">Are there opportunities for networking with other professionals?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">Yes, the program offers opportunities to network with peers, coding tutors, and industry professionals, fostering a collaborative learning environment.</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">What kind of support does AJA offer for career growth?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">AJA supports career growth through continuous training, mentorship, and opportunities to work on high-impact projects with leading IT companies.</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">Are IT and non-IT graduates eligible for the Coding Tutor™ program?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">Yes, both IT and non-IT graduates are eligible, provided they have completed basic training in the respective technology.</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">What if I have a career gap?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">A career gap is not a barrier. We assess candidates based on their skills and willingness to learn.</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">Is there any financial support available?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">Yes, financial support options are available. Please contact us for more details.</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">What will be the banking process for the loan?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">As per banking policies, your CIBIL score will be checked for loan approval. Loans up to 3 lakhs can be approved. If you choose a 24-month EMI plan, there is no interest. However, in the event of a bounce or default, you will be required to bear the interest from the beginning.</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">Will I receive a detailed course curriculum?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">Yes, a detailed course curriculum will be provided at the start of the program.</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">Will I have to work from a client location as per the requirement?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">Yes, you may be required to work from a client location based on project needs.</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">What if I get another opportunity after the internship?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">There is no bond after the internship. However, if you are working on a project, a 3-month notice period is required.</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">How does AJA handle background verification (BGV)?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">AJA conducts thorough background verification to ensure the integrity and credentials of all participants.</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">How many clients does AJA have?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">AJA has a diverse portfolio of clients across various industries, ensuring ample opportunities for career growth. (for more details click here --- Client's page will be linked here)</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">What are the different payment patterns available?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">We offer flexible payment patterns, including installment options. Please contact us for more details.</p>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion__header">
+                    <h2 class="accordion__question">Are there different payment patterns available?</h2>
+                    <span class="accordion__icon">
+                        <i id="accordion-icon" class="ri-add-line"></i>
+                    </span>
+                </div>
+                <div class="accordion__content">
+                    <p class="accordion__answer">Yes, AJA offers flexible payment patterns to accommodate various financial situations, including installment options and financial support programs.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="text-secondary mb-4">Contact Info</h4>
+                        <a
+                            href="https://www.google.com/maps/place/Q+City/@17.4274294,78.329242,17z/data=!4m6!3m5!1s0x3bcb937bca109447:0x13fe88d4363d2756!8m2!3d17.4274243!4d78.3318169!16s%2Fg%2F11_q3_xfc?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D"><i
+                                class="fa fa-map-marker-alt me-2"></i> Aja Consulting Services LLP
+                            A Block, 4th Floor, Q City, Gachibowli, Hyderabad, Telangana 500032</a>
+                        <a href=""><i class="fas fa-envelope me-2"></i>hr@ajacs.in</a>
+                        <a href=""><i class="fas fa-phone me-2"></i> + 9697 9697 88</a>
+                        <!-- <div class="d-flex align-items-center">
+                            <i class="fas fa-share fa-2x text-secondary me-2"></i>
+                            <a class="btn mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            <a class="btn mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="text-secondary mb-4">Opening Time</h4>
+                        <div class="mb-3">
+                            <h6 class="text-muted mb-0">Mon - Friday:</h6>
+                            <p class="text-white mb-0">09.00 am to 07.00 pm</p>
+                        </div>
+                        <div class="mb-3">
+                            <h6 class="text-muted mb-0">Satday:</h6>
+                            <p class="text-white mb-0">10.00 am to 05.00 pm</p>
+                        </div>
+                        <div class="mb-3">
+                            <h6 class="text-muted mb-0">Vacation:</h6>
+                            <p class="text-white mb-0">All Sunday is our vacation</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="text-secondary mb-4">Our Services</h4>
+                        <a href="#" class=""><i class="fas fa-angle-right me-2"></i> IT Job with 3.6* LPA Salary</a>
+                        <a href="#" class=""><i class="fas fa-angle-right me-2"></i> 1000 hours of Coding</a>
+                        <a href="#" class=""><i class="fas fa-angle-right me-2"></i> 120 hours of Communication
+                            Skills</a>
+                        <a href="#" class=""><i class="fas fa-angle-right me-2"></i> 80 hours of Corporate Skills</a>
+                        <a href="#" class=""><i class="fas fa-angle-right me-2"></i> Real-Time Projects</a>
+                        <a href="#" class=""><i class="fas fa-angle-right me-2"></i> Hands On Practice </a>
+                        <a href="#" class=""><i class="fas fa-angle-right me-2"></i> Industry Experts' Guidance</a>
+                        <a href="#" class=""><i class="fas fa-angle-right me-2"></i>IT Infrastructure Mangement</a>
+                        <a href="#" class=""><i class="fas fa-angle-right me-2"></i> Mentorship & Guidance</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item">
+                        <h4 class="text-secondary mb-4">Useful Links</h4>
+                        <div class="d-inline-flex align-items-center" style="height: 45px;">
+                            <a class="btn btn-sm btn-outline-light btn-square rounded-circle me-2" href="https://x.com/ajacsllp?mx=2"><i class="fab fa-twitter fw-normal text-secondary"></i></a>
+                                <a class="btn btn-sm btn-outline-light btn-square rounded-circle me-2" href="https://www.facebook.com/people/Aja-Consulting-Services-LLP/61557243235662/"><i class="fab fa-facebook-f fw-normal text-secondary"></i></a>
+                                <a class="btn btn-sm btn-outline-light btn-square rounded-circle me-2" href="https://www.linkedin.com/company/ajaconsultingservicesllp?originalSubdomain=in"><i class="fab fa-linkedin-in fw-normal text-secondary"></i></a>
+                                <a class="btn btn-sm btn-outline-light btn-square rounded-circle me-2" href="https://www.instagram.com/ajacodingtutorllp/"><i class="fab fa-instagram fw-normal text-secondary"></i></a>
+                                <a class="btn btn-sm btn-outline-light btn-square rounded-circle" href="https://www.youtube.com/@ajacodingtutorllp"><i class="fab fa-youtube fw-normal text-secondary"></i></a>
+                        </div>
+                        <div class="position-relative mx-auto rounded-pill">
+                            <!-- <input class="form-control border-0 rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Enter your email">
+                            <button type="button" class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 mt-2 me-2">SignUp</button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright py-4">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-md-0">
+                    <span class="text-white"><a href="#" class="border-bottom text-white"><i
+                                class="fas fa-copyright text-light me-2"></i>Coding Tutor</a>, All right
+                        reserved.</span>
+                </div>
+                <div class="col-md-6 text-center text-md-end text-white">
+                    <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
+                    <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
+                    <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
+                    <!-- Designed By <a class="border-bottom text-white" href="https://htmlcodex.com">Coding Tutor</a> Distributed By <a class="border-bottom text-white" href="https://themewagon.com">ThemeWagon</a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>
+    <script>
+        function toggleContent(event) {
+            event.preventDefault(); // Prevent the default anchor behavior (page jump)
+            const span = event.target.previousElementSibling.querySelector('.more-content'); // Get the span with the extra content
+            if (span.style.display === "none") {
+                span.style.display = "inline"; // Show the content
+                event.target.textContent = "Read Less"; // Change text to "Read Less"
+            } else {
+                span.style.display = "none"; // Hide the content
+                event.target.textContent = "Read More"; // Change text back to "Read More"
+            }
+        }
+    </script>
+    <script>
+        const accordions = document.querySelectorAll(".accordion");
+
+        accordions.forEach((accordion, index) => {
+            const header = accordion.querySelector(".accordion__header");
+            const content = accordion.querySelector(".accordion__content");
+            const icon = accordion.querySelector("#accordion-icon");
+
+            header.addEventListener("click", () => {
+                const isOpen = content.style.height === `${content.scrollHeight}px`;
+
+                accordions.forEach((a, i) => {
+                    const c = a.querySelector(".accordion__content");
+                    const ic = a.querySelector("#accordion-icon");
+
+                    c.style.height = i === index && !isOpen ? `${c.scrollHeight}px` : "0px";
+                    ic.classList.toggle("ri-add-line", i !== index || !isOpen);
+                    ic.classList.toggle("ri-subtract-fill", i === index && !isOpen);
+                });
+            });
+        });
+
+    </script>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

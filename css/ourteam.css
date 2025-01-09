@@ -1,0 +1,193 @@
+/* Main card styling */
+main {
+    width: 100%;
+    max-width: 340px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+main:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Top Card - Profile Section */
+.top-card {
+    width: 100%;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.top-card .profile {
+    width: 100%;
+    height: auto; /* Ensure the image maintains aspect ratio */
+    max-height: 300px; /* Maximum height for desktop */
+    object-fit: contain; /* Make sure the image is fully contained within the box */
+}
+
+/* Name Styling */
+.top-card .name h3,
+.top-card .name h4 {
+    font-size: 1.5em;
+    color: #333;
+    font-weight: 600;
+    margin: 0;
+    padding-top: 10px;
+}
+
+/* h3 and h4 Colors and Styling */
+.top-card .name h3 {
+    color: #e02454; /* Blue color for name */
+}
+
+.top-card .name h4 {
+    color: #666; /* Lighter color for position */
+    font-size: 1.2em;
+}
+
+/* About Section */
+.middle-card {
+    text-align: left;
+    padding: 10px 0;
+}
+
+.middle-card h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin: 10px 0;
+    border-bottom: 2px solid #e02454;
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    font-size: 58px;
+    font-weight: 600;
+    color: #e02454;
+    margin: 10px 0;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Middle Card Text */
+.middle-card p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.middle-card .more-content {
+    display: none;
+    color: #333;
+}
+
+/* Read More Button */
+.read-more {
+    display: inline-block;
+    margin-top: 10px;
+    color: #e02454;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 15px;
+}
+
+footer .social-icon {
+    font-size: 24px;
+    margin: 0 10px;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+footer .social-icon:hover {
+    color: #007bff;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .col-md-4, .col-sm-6 {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .top-card .name h3 {
+        font-size: 1.3em;
+    }
+
+    .top-card .name h4 {
+        font-size: 1.1em;
+    }
+
+    .middle-card h2 {
+        width: 80%;
+    }
+
+    footer .social-icon {
+        font-size: 20px;
+    }
+
+    /* Adjust h1 font-size for tablets */
+    h1 {
+        font-size: 40px; /* Decrease size for medium screens */
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+    .top-card .profile {
+        max-height: none; /* Remove the max-height constraint for mobile */
+        height: auto; /* Let the height be determined by the image's aspect ratio */
+        object-fit: contain; /* Ensure the full image is visible without cutting off */
+    }
+
+    .top-card .name h3 {
+        font-size: 1.2em;
+    }
+
+    .top-card .name h4 {
+        font-size: 1em;
+    }
+
+    .read-more {
+        font-size: 12px;
+    }
+
+    footer .social-icon {
+        font-size: 18px;
+    }
+
+    /* Adjust h1 font-size for small mobile screens */
+    h1 {
+        font-size: 32px; /* Further decrease size for smaller screens */
+    }
+}
